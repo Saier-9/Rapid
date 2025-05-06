@@ -4,6 +4,22 @@ setlocal
 set cmd=%1
 set args=%2 %3 %4 %5 %6 %7 %8 %9
 
+set "args=%args:-fc=--force%"
+set "args=%args:-rb=--rebase%"
+set "args=%args:-hd=--hard%"
+set "args=%args:-sf=--soft%"
+set "args=%args:-br=--branch%"
+set "args=%args:-pt=--patch%"
+set "args=%args:-un=--unset%"
+set "args=%args:-cf=--config%"
+set "args=%args:-vb=--verbose%"
+set "args=%args:-ia=--interactive%"
+set "args=%args:-qt=--quiet%"
+set "args=%args:-dr=--dry-run%"
+set "args=%args:-ls=--list%"
+set "args=%args:-us=--upstream%"
+set "args=%args:-st=--staged%"
+
 if /I "%cmd%"=="cln" (
     git clone %args%
     goto :eof
@@ -65,6 +81,11 @@ if /I "%cmd%"=="br" (
 )
 
 if /I "%cmd%"=="cm" (
+    git commit -m "%args%"
+    goto :eof
+)
+
+if /I "%cmd%"=="co" (
     git commit %args%
     goto :eof
 )
@@ -126,6 +147,20 @@ if /I "%cmd%"=="ps" (
 
 if /I "%cmd%"=="psm" (
     git push origin main %args%
+    goto :eof
+)
+
+if /I "%cmd%"=="acp" (
+    git add .
+    git commit -m "%args%"
+    git push
+    goto :eof
+)
+
+if /I "%cmd%"=="spp" (
+    git stash
+    git pull
+    git stash pop
     goto :eof
 )
 
