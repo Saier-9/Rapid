@@ -13,7 +13,7 @@ For example, to commit changes and push to a repository:
 ```bash
 g st             # git status
 g a file.ext     # git add file.ext
-g cm -m "msg"    # git commit -m "msg"
+g cm msg         # git commit -m "msg"
 g psm            # git push origin main
 ```
 Alternatively, you could use any other push command, detailed below.
@@ -78,7 +78,7 @@ Alternatively, you could use any other push command, detailed below.
 ## Included Flags
 | Alias | Flag | Description |
 | -------- | -------- | -------- |
-|`-fc`|`--force`|Force the operation to go through, even if it may cause conflicts or issues|
+|`-f`|`--force`|Force the operation to go through, even if it may cause conflicts or issues|
 |`-rb`|`--rebase`|Rebase changes (apply commits on top of another branch) rather than merging|
 |`-hd`|`--hard`|A hard reset, which discards changes and resets to a specified state|
 |`-sf`|`--soft`|A soft reset. Keeps changes staged in your working directory but moves the commit pointer|
@@ -86,9 +86,9 @@ Alternatively, you could use any other push command, detailed below.
 |`-pt`|`--patch`|Interactive patching mode; allows you to selectively apply changes|
 |`-un`|`--unset`|Unset a configuration value (useful for git config)|
 |`-cf`|`--config`|Modify or set a configuration value|
-|`-vb`|`--verbose`|Increase the verbosity of output for more detailed info|
-|`-ia`|`--interactive`|Enable interactive mode, usually for staging or commits|
-|`-qt`|`--quiet`|Suppress output, showing only essential info.|
+|`-v`|`--verbose`|Increase the verbosity of output for more detailed info|
+|`-i`|`--interactive`|Enable interactive mode, usually for staging or commits|
+|`-q`|`--quiet`|Suppress output, showing only essential info.|
 |`-dr`|`--dry-run`|Run the command but don’t actually execute it (just simulate)|
 |`-ls`|`--list`|List available items, like branches, remotes, or config settings|
 |`-us`|`--upstream`|Set or show the upstream branch to track|
